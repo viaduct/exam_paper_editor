@@ -29,7 +29,12 @@ SOURCES += \
     data/data.cpp \
     data/data_cmd.cpp \
     data/dependency_key.cpp \
-    data/container.cpp
+    data/container.cpp \
+    data/single_container.cpp \
+    data/map_container.cpp \
+    data/list_container.cpp \
+    data/set_container.cpp \
+    single_prim_container.cpp
 
 HEADERS += \
     data/data.h \
@@ -38,4 +43,9 @@ HEADERS += \
     data/dependency_key.h \
     data/container.h \
     data/container_type.h \
-    data/type_enum_ref.h
+    data/type_enum_ref.h \
+    data/single_container.h \
+    data/map_container.h \
+    data/list_container.h \
+    data/set_container.h \
+    single_prim_container.h
