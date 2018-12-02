@@ -52,7 +52,12 @@ SOURCES += \
     data/context.cpp \
     data/file.cpp \
     data/tree_item.cpp \
-    data/resp.cpp
+    data/resp.cpp \
+    data/single_container_cmd.cpp \
+    data/single_prim_container_cmd.cpp \
+    data/list_container_cmd.cpp \
+    data/set_container_cmd.cpp \
+    data/map_container_cmd.cpp
 
 HEADERS += \
     data/data.h \
@@ -84,4 +89,9 @@ HEADERS += \
     data/context.h \
     data/file.h \
     data/tree_item.h \
-    data/resp.h
+    data/resp.h \
+    data/single_container_cmd.h \
+    data/single_prim_container_cmd.h \
+    data/list_container_cmd.h \
+    data/set_container_cmd.h \
+    data/map_container_cmd.h
