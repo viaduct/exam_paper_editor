@@ -5,7 +5,20 @@ namespace data {
 
 enum class DataType
 {
-	Null
+	Null,
+	Root,
+	Dir,
+	Image,
+	Question,
+	Exam,
+	BlockContext,
+	TextBlock,
+	ImageBlock,
+	BlockList,
+	MultipleChoicesResp,
+	MatchingResp,
+	Choice,
+	MatchingRespItem
 };
 
 }}

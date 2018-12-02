@@ -5,6 +5,12 @@
 #include "data_type.h"
 #include "dependency_key.h"
 
+#include "single_container.h"
+#include "set_container.h"
+#include "list_container.h"
+#include "map_container.h"
+#include "single_prim_container.h"
+
 namespace wally {
 namespace data {
 

@@ -34,7 +34,25 @@ SOURCES += \
     data/map_container.cpp \
     data/list_container.cpp \
     data/set_container.cpp \
-    single_prim_container.cpp
+    data/single_prim_container.cpp \
+    data/root.cpp \
+    data/dir.cpp \
+    data/image.cpp \
+    data/question.cpp \
+    data/exam.cpp \
+    data/block_context.cpp \
+    data/text_block.cpp \
+    data/image_block.cpp \
+    data/block_list.cpp \
+    data/multiple_choices_resp.cpp \
+    data/matching_resp.cpp \
+    data/choice.cpp \
+    data/matching_resp_item.cpp \
+    data/block.cpp \
+    data/context.cpp \
+    data/file.cpp \
+    data/tree_item.cpp \
+    data/resp.cpp
 
 HEADERS += \
     data/data.h \
@@ -48,4 +66,22 @@ HEADERS += \
     data/map_container.h \
     data/list_container.h \
     data/set_container.h \
-    single_prim_container.h
+    data/single_prim_container.h \
+    data/root.h \
+    data/dir.h \
+    data/image.h \
+    data/question.h \
+    data/exam.h \
+    data/block_context.h \
+    data/text_block.h \
+    data/image_block.h \
+    data/block_list.h \
+    data/multiple_choices_resp.h \
+    data/matching_resp.h \
+    data/choice.h \
+    data/matching_resp_item.h \
+    data/block.h \
+    data/context.h \
+    data/file.h \
+    data/tree_item.h \
+    data/resp.h
