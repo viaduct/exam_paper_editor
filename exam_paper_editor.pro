@@ -23,6 +23,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 CONFIG += c++14
+CONFIG += object_parallel_to_source
 
 SOURCES += \
     main.cpp \
@@ -57,7 +58,14 @@ SOURCES += \
     data/single_prim_container_cmd.cpp \
     data/list_container_cmd.cpp \
     data/set_container_cmd.cpp \
-    data/map_container_cmd.cpp
+    data/map_container_cmd.cpp \
+    qtfront/app.cpp \
+    qtfront/loader.cpp \
+    qtfront/app_cmd_manager.cpp \
+    qtfront/context.cpp \
+    qtfront/main_window.cpp \
+    qtfront/context_holder.cpp \
+    qtfront/app_cmd.cpp
 
 HEADERS += \
     data/data.h \
@@ -94,4 +102,11 @@ HEADERS += \
     data/single_prim_container_cmd.h \
     data/list_container_cmd.h \
     data/set_container_cmd.h \
-    data/map_container_cmd.h
+    data/map_container_cmd.h \
+    qtfront/app.h \
+    qtfront/loader.h \
+    qtfront/app_cmd_manager.h \
+    qtfront/context.h \
+    qtfront/main_window.h \
+    qtfront/context_holder.h \
+    qtfront/app_cmd.h
