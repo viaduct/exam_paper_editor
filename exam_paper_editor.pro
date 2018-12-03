@@ -65,7 +65,10 @@ SOURCES += \
     qtfront/context.cpp \
     qtfront/main_window.cpp \
     qtfront/context_holder.cpp \
-    qtfront/app_cmd.cpp
+    qtfront/app_cmd.cpp \
+    qtfront/dir_context_var.cpp \
+    qtfront/drag_context_var.cpp \
+    qtfront/opened_tree_item_context_var.cpp
 
 HEADERS += \
     data/data.h \
@@ -109,4 +112,7 @@ HEADERS += \
     qtfront/context.h \
     qtfront/main_window.h \
     qtfront/context_holder.h \
-    qtfront/app_cmd.h
+    qtfront/app_cmd.h \
+    qtfront/dir_context_var.h \
+    qtfront/drag_context_var.h \
+    qtfront/opened_tree_item_context_var.h
