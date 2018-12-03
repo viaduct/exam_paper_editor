@@ -1,6 +1,7 @@
 #pragma once
 #include <memory>
 #include <vector>
+#include "app_cmd_info.h"
 
 namespace wally {
 
@@ -20,6 +21,14 @@ public:
 
 	virtual void run() = 0;
 	virtual void undo() = 0;
+
+	AppCmdInfo const* info() const;
+	void setInfo(AppCmdInfo const& value);
+	void setInfo(AppCmdInfo&& value);
+
+private:
+	AppCmdInfo
+	m_info;
 };
 
 class AppDataCmd : public AppCmd

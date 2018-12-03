@@ -68,7 +68,16 @@ SOURCES += \
     qtfront/app_cmd.cpp \
     qtfront/dir_context_var.cpp \
     qtfront/drag_context_var.cpp \
-    qtfront/opened_tree_item_context_var.cpp
+    qtfront/opened_tree_item_context_var.cpp \
+    qtfront/tree_item_model_sub/dir_mimic.cpp \
+    qtfront/tree_item_model_sub/tree_item_mimic.cpp \
+    qtfront/tree_item_model_sub/tree_item_model_context_holder.cpp \
+    qtfront/tree_item_view_sub/tree_item_view_context_holder.cpp \
+    qtfront/tree_item_view_sub/view.cpp \
+    qtfront/click_event_emitter.cpp \
+    qtfront/tree_item_model.cpp \
+    qtfront/tree_item_view.cpp \
+    qtfront/app_cmd_info.cpp
 
 HEADERS += \
     data/data.h \
@@ -115,4 +124,16 @@ HEADERS += \
     qtfront/app_cmd.h \
     qtfront/dir_context_var.h \
     qtfront/drag_context_var.h \
-    qtfront/opened_tree_item_context_var.h
+    qtfront/opened_tree_item_context_var.h \
+    qtfront/tree_item_model_sub/dir_mimic.h \
+    qtfront/tree_item_model_sub/tree_item_mimic.h \
+    qtfront/tree_item_model_sub/tree_item_model_context_holder.h \
+    qtfront/tree_item_view_sub/tree_item_view_context_holder.h \
+    qtfront/tree_item_view_sub/view.h \
+    qtfront/click_event_emitter.h \
+    qtfront/tree_item_model.h \
+    qtfront/tree_item_view.h \
+    qtfront/app_cmd_info.h
+
+FORMS += \
+    qtfront/tree_item_view.ui

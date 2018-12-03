@@ -4,6 +4,21 @@
 namespace wally {
 namespace qtfront {
 
+const AppCmdInfo*AppCmd::info() const
+{
+	return &m_info;
+}
+
+void AppCmd::setInfo(const AppCmdInfo& value)
+{
+	m_info = value;
+}
+
+void AppCmd::setInfo(AppCmdInfo&& value)
+{
+	m_info = std::move(value);
+}
+
 AppDataCmd::AppDataCmd(const std::shared_ptr<data::DataCmd>& cmd) :
 	m_cmd(cmd)
 {
