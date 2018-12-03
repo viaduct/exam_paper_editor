@@ -77,7 +77,16 @@ SOURCES += \
     qtfront/click_event_emitter.cpp \
     qtfront/tree_item_model.cpp \
     qtfront/tree_item_view.cpp \
-    qtfront/app_cmd_info.cpp
+    qtfront/app_cmd_info.cpp \
+    qtfront/exam_model_sub/exam_mimic.cpp \
+    qtfront/exam_model_sub/exam_model_context_holder.cpp \
+    qtfront/exam_model_sub/question_mimic.cpp \
+    qtfront/exam_view_sub/exam_view_context_holder.cpp \
+    qtfront/exam_view_sub/list_view.cpp \
+    qtfront/exam_view_sub/name_edit.cpp \
+    qtfront/exam_html_exporter.cpp \
+    qtfront/exam_model.cpp \
+    qtfront/exam_view.cpp
 
 HEADERS += \
     data/data.h \
@@ -133,7 +142,17 @@ HEADERS += \
     qtfront/click_event_emitter.h \
     qtfront/tree_item_model.h \
     qtfront/tree_item_view.h \
-    qtfront/app_cmd_info.h
+    qtfront/app_cmd_info.h \
+    qtfront/exam_model_sub/exam_mimic.h \
+    qtfront/exam_model_sub/exam_model_context_holder.h \
+    qtfront/exam_model_sub/question_mimic.h \
+    qtfront/exam_view_sub/exam_view_context_holder.h \
+    qtfront/exam_view_sub/list_view.h \
+    qtfront/exam_view_sub/name_edit.h \
+    qtfront/exam_html_exporter.h \
+    qtfront/exam_model.h \
+    qtfront/exam_view.h
 
 FORMS += \
-    qtfront/tree_item_view.ui
+    qtfront/tree_item_view.ui \
+    qtfront/exam_view.ui

@@ -10,6 +10,8 @@ class DependencyKey;
 class Root;
 class TreeItem;
 class Dir;
+class Exam;
+class Question;
 }
 
 namespace qtfront {
@@ -48,6 +50,10 @@ public:
 	void act_addImage(data::Dir* parentDir, std::string const& name);
 	void act_addImageFromFile(data::Dir* parentDir);
 	void act_removeFromDir(data::Dir* parentDir, std::vector<data::TreeItem*> const& targets);
+	void act_appendExamQuestions(data::Exam* exam, std::vector<data::Question*> const& questions);
+	void act_removeExamQuestions(data::Exam* exam, std::vector<data::Question*> const& questions);
+	void act_moveExamQuestionUp(data::Exam* exam, data::Question* question);
+	void act_moveExamQuestionDown(data::Exam* exam, data::Question* question);
 
 private:
 	std::unique_ptr<DirContextVar>

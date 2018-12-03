@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>wally::qtfront::ExamView</class>
+ <widget class="QWidget" name="wally::qtfront::ExamView">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Exam Name</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="exam_view_sub::NameEdit" name="edit_name"/>
+   </item>
+   <item>
+    <widget class="qtfront::exam_view_sub::ListView" name="listView"/>
+   </item>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Drag Question to list view to add.</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btn_export">
+     <property name="text">
+      <string>Export</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="btn_moveUp">
+       <property name="text">
+        <string>Move Up</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_moveDown">
+       <property name="text">
+        <string>Move Down</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btn_removeSelectedQuestions">
+     <property name="text">
+      <string>Remove Selected Questions</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>qtfront::exam_view_sub::ListView</class>
+   <extends>QListView</extends>
+   <header>qtfront/exam_view_sub/list_view.h</header>
+  </customwidget>
+  <customwidget>
+   <class>exam_view_sub::NameEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qtfront/exam_view_sub/name_edit.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

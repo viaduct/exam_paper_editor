@@ -267,6 +267,121 @@ void Context::act_removeFromDir(data::Dir* parentDir, const std::vector<data::Tr
 	}
 }
 
+void Context::act_appendExamQuestions(data::Exam* exam, std::vector<data::Question*> const& questions)
+{
+	auto cmds = std::make_shared<data::DataCmdList>();
+
+	for ( auto& question : questions )
+	{
+		if ( !exam->questionContainer()->has(question) )
+		{
+			auto add = std::make_shared<data::AppendRefToList<data::Question>>();
+			add->setContainer(exam->questionContainer());
+			add->setData(question);
+
+			cmds->append(std::move(add));
+		}
+	}
+
+	if ( cmds->isEmpty() == false )
+	{
+		auto appCmd = std::make_shared<AppDataCmd>(std::move(cmds));
+
+		AppCmdInfo info;
+		std::stringstream brief;
+		brief << "Append Exam Questions.";
+		info.setBrief(brief.str());
+		appCmd->setInfo(std::move(info));
+
+		cmdManager()->run(std::move(appCmd));
+	}
+}
+
+void Context::act_removeExamQuestions(data::Exam* exam, const std::vector<data::Question*>& questions)
+{
+	auto cmds = std::make_shared<data::DataCmdList>();
+
+	for ( auto& question : questions )
+	{
+		bool isValid;
+		auto index = exam->questionContainer()->index(question, &isValid);
+
+		if ( isValid )
+		{
+			auto remove = std::make_shared<data::RemoveRefFromList<data::Question>>();
+			remove->setContainer(exam->questionContainer());
+			remove->setTarget(index);
+
+			cmds->append(std::move(remove));
+		}
+	}
+
+	if ( cmds->isEmpty() == false )
+	{
+		auto appCmd = std::make_shared<AppDataCmd>(std::move(cmds));
+
+		AppCmdInfo info;
+		std::stringstream brief;
+		brief << "Delete Exam Questions.";
+		info.setBrief(brief.str());
+		appCmd->setInfo(std::move(info));
+
+		cmdManager()->run(std::move(appCmd));
+	}
+}
+
+void Context::act_moveExamQuestionUp(data::Exam* exam, data::Question* question)
+{
+	bool isExamHasQuestion;
+	auto questionIndex = exam->questionContainer()->index(question, &isExamHasQuestion);
+
+	if ( isExamHasQuestion )
+	{
+		if ( questionIndex != 0 )
+		{
+			auto move = std::make_shared<data::MoveRefList<data::Question>>();
+			move->setContainer(exam->questionContainer());
+			move->setTarget(questionIndex, questionIndex - 1);
+
+			auto appCmd = std::make_shared<AppDataCmd>(std::move(move));
+
+			AppCmdInfo info;
+			std::stringstream brief;
+			brief << "Move Exam Question up.";
+			info.setBrief(brief.str());
+			appCmd->setInfo(std::move(info));
+
+			cmdManager()->run(std::move(appCmd));
+		}
+	}
+}
+
+void Context::act_moveExamQuestionDown(data::Exam* exam, data::Question* question)
+{
+	bool isExamHasQuestion;
+	auto questionIndex = exam->questionContainer()->index(question, &isExamHasQuestion);
+
+	if ( isExamHasQuestion )
+	{
+		if ( questionIndex != exam->questionContainer()->size() - 1 )
+		{
+			auto move = std::make_shared<data::MoveRefList<data::Question>>();
+			move->setContainer(exam->questionContainer());
+			move->setTarget(questionIndex, questionIndex + 1);
+
+			auto appCmd = std::make_shared<AppDataCmd>(std::move(move));
+
+			AppCmdInfo info;
+			std::stringstream brief;
+			brief << "Move Exam Question down.";
+			info.setBrief(brief.str());
+			appCmd->setInfo(std::move(info));
+
+			cmdManager()->run(std::move(appCmd));
+		}
+	}
+}
+
 data::DependencyKey dependencyKeyFromPtr(const void* value)
 {
 	static_assert(sizeof(data::DependencyKey) >= sizeof(nullptr), "DependencyKey has size smaller than a pointer.");
