@@ -36,6 +36,7 @@ TreeItemView::TreeItemView(QWidget* parent) : QWidget(parent),
 	m_model(new TreeItemModel)
 {
 	m_ui->setupUi(this);
+	updateCurDirLabel();
 }
 
 TreeItemView::~TreeItemView()

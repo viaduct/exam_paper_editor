@@ -18,7 +18,8 @@ class Context;
 class App
 {
 public:
-	App() = default;
+	App();
+	~App();
 	App(App const&) = delete;
 	App& operator =(App const&) = delete;
 

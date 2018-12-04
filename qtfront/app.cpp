@@ -1,14 +1,24 @@
 #include <QApplication>
 #include "../data/root.h"
+#include "../data/dir.h"
 #include "app.h"
 #include "loader.h"
 #include "app_cmd_manager.h"
 #include "app_cmd_model.h"
 #include "context.h"
 #include "main_window.h"
+#include "dir_context_var.h"
 
 namespace wally {
 namespace qtfront {
+
+App::App()
+{
+}
+
+App::~App()
+{
+}
 
 Loader*App::loader()
 {
@@ -50,6 +60,8 @@ int App::exec(int argc, char** argv)
 
 	// Initialize data Root.
 	m_root = std::make_unique<data::Root>();
+	// Default root dir should be exist.
+	m_root->rootDirContainer()->setValid(std::make_shared<data::Dir>());
 
 	// Initialize AppCmdManager.
 	m_cmdManager = std::make_unique<AppCmdManager>();
@@ -57,6 +69,7 @@ int App::exec(int argc, char** argv)
 	// Initialize Context
 	m_context = std::make_unique<Context>();
 	m_context->setApp(this);
+	m_context->dirContextVar()->activateDir(m_root->rootDirContainer()->single());
 
 	// Initialize AppCmdModel.
 	m_cmdModel = std::make_unique<AppCmdModel>();

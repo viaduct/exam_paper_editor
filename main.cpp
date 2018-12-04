@@ -1,4 +1,8 @@
+#include "qtfront/app.h"
+
 int main(int argc, char** argv)
 {
-	return 0;
+	wally::qtfront::App app;
+
+	return app.exec(argc, argv);
 }
