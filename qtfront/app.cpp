@@ -1,8 +1,9 @@
 #include <QApplication>
+#include "../data/root.h"
 #include "app.h"
 #include "loader.h"
-#include "../data/root.h"
 #include "app_cmd_manager.h"
+#include "app_cmd_model.h"
 #include "context.h"
 #include "main_window.h"
 
@@ -29,6 +30,11 @@ Context*App::context()
 	return m_context.get();
 }
 
+AppCmdModel*App::cmdModel()
+{
+	return m_cmdModel.get();
+}
+
 MainWindow*App::mainWindow()
 {
 	return m_mainWindow.get();
@@ -51,6 +57,11 @@ int App::exec(int argc, char** argv)
 	// Initialize Context
 	m_context = std::make_unique<Context>();
 	m_context->setApp(this);
+
+	// Initialize AppCmdModel.
+	m_cmdModel = std::make_unique<AppCmdModel>();
+	m_cmdModel->init(m_context.get());
+	m_cmdModel->setValidAppCmdManager(m_cmdManager.get());
 
 	// Initialize MainWindow.
 	m_mainWindow = std::make_unique<MainWindow>();

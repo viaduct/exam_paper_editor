@@ -11,6 +11,7 @@ namespace qtfront {
 
 class MainWindow;
 class AppCmdManager;
+class AppCmdModel;
 class Loader;
 class Context;
 
@@ -25,6 +26,7 @@ public:
 	data::Root* root();
 	AppCmdManager* cmdManager();
 	Context* context();
+	AppCmdModel* cmdModel();
 	MainWindow* mainWindow();
 
 	int exec(int argc, char** argv);
@@ -38,6 +40,8 @@ private:
 	m_cmdManager;
 	std::unique_ptr<Context>
 	m_context;
+	std::unique_ptr<AppCmdModel>
+	m_cmdModel;
 	std::unique_ptr<MainWindow>
 	m_mainWindow;
 };

@@ -35,6 +35,7 @@ namespace qtfront {
 class App;
 class AppCmdManager;
 class Loader;
+class AppCmdModel;
 class DirContextVar;
 class OpenedTreeItemContextVar;
 class DragContextVar;
@@ -54,6 +55,7 @@ public:
 	data::Root* root();
 	AppCmdManager* cmdManager();
 	Loader* loader();
+	AppCmdModel* cmdModel();
 
 	DirContextVar* dirContextVar();
 	OpenedTreeItemContextVar* openedTreeItemContextVar();

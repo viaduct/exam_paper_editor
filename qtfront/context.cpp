@@ -73,6 +73,11 @@ Loader*Context::loader()
 	return m_app->loader();
 }
 
+AppCmdModel*Context::cmdModel()
+{
+	return m_app->cmdModel();
+}
+
 DirContextVar*Context::dirContextVar()
 {
 	return m_dirContextVar.get();

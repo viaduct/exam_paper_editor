@@ -102,7 +102,13 @@ SOURCES += \
     qtfront/question_view_sub/question_view_context_holder.cpp \
     qtfront/question_view_sub/resp_mimic.cpp \
     qtfront/question_view_sub/text_block_mimic.cpp \
-    qtfront/question_view_sub/name_edit.cpp
+    qtfront/question_view_sub/name_edit.cpp \
+    qtfront/app_cmd_model_sub/app_cmd_model_context_holder.cpp \
+    qtfront/app_cmd_model_sub/cmd_manager_mimic.cpp \
+    qtfront/app_cmd_view_sub/app_cmd_view_context_holder.cpp \
+    qtfront/app_cmd_view_sub/view.cpp \
+    qtfront/app_cmd_model.cpp \
+    qtfront/app_cmd_view.cpp
 
 HEADERS += \
     data/data.h \
@@ -183,7 +189,13 @@ HEADERS += \
     qtfront/question_view_sub/question_view_context_holder.h \
     qtfront/question_view_sub/resp_mimic.h \
     qtfront/question_view_sub/text_block_mimic.h \
-    qtfront/question_view_sub/name_edit.h
+    qtfront/question_view_sub/name_edit.h \
+    qtfront/app_cmd_model_sub/app_cmd_model_context_holder.h \
+    qtfront/app_cmd_model_sub/cmd_manager_mimic.h \
+    qtfront/app_cmd_view_sub/app_cmd_view_context_holder.h \
+    qtfront/app_cmd_view_sub/view.h \
+    qtfront/app_cmd_model.h \
+    qtfront/app_cmd_view.h
 
 FORMS += \
     qtfront/tree_item_view.ui \
@@ -197,4 +209,5 @@ FORMS += \
     qtfront/question_view_sub/matching_resp_mimic.ui \
     qtfront/question_view_sub/multiple_choices_resp_mimic.ui \
     qtfront/question_view_sub/question_mimic.ui \
-    qtfront/question_view_sub/text_block_mimic.ui
+    qtfront/question_view_sub/text_block_mimic.ui \
+    qtfront/app_cmd_view.ui
