@@ -160,6 +160,7 @@ void EditorView::removeDataWidget(int index)
 	m_widgetInfos.erase(m_widgetInfos.begin() + infoIndex);
 
 	removeTab(indexOf(curWidget));
+	delete curWidget;
 }
 
 void EditorView::removeCurrentDataWidget()
