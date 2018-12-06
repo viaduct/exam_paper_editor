@@ -46,7 +46,7 @@ QuestionView::~QuestionView()
 {
 	if ( m_question )
 	{
-		m_question->removeDepended(dependencyKeyFromPtr(this));
+		m_question->purgeDepended(dependencyKeyFromPtr(this));
 	}
 }
 
@@ -152,7 +152,7 @@ void QuestionView::setNullQuestion()
 	disableNameEdit();
 	m_con_nameUpdated.disconnect();
 
-	m_question->removeDepended(dependencyKeyFromPtr(this));
+	m_question->purgeDepended(dependencyKeyFromPtr(this));
 	m_question = nullptr;
 }
 

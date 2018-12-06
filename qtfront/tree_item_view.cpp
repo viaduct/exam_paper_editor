@@ -43,7 +43,7 @@ TreeItemView::~TreeItemView()
 {
 	if ( m_dir )
 	{
-		m_dir->removeDepended(dependencyKeyFromPtr(this));
+		m_dir->purgeDepended(dependencyKeyFromPtr(this));
 	}
 }
 
@@ -158,7 +158,7 @@ void TreeItemView::setNullDir()
 {
 	m_model->setNullDir();
 
-	m_dir->removeDepended(dependencyKeyFromPtr(this));
+	m_dir->purgeDepended(dependencyKeyFromPtr(this));
 	m_dir = nullptr;
 
 	// Updates.

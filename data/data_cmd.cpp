@@ -7,7 +7,10 @@ void DataCmdList::run()
 {
 	for ( size_t i = 0; i < m_cmds.size(); ++i )
 	{
-		m_cmds.at(i)->run();
+		if ( m_cmds.at(i)->isIgnored() == false )
+		{
+			m_cmds.at(i)->run();
+		}
 	}
 }
 
@@ -16,7 +19,10 @@ void DataCmdList::undo()
 	for ( size_t i = m_cmds.size(); i != 0; )
 	{
 		--i;
-		m_cmds.at(i)->undo();
+		if ( m_cmds.at(i)->isIgnored() == false )
+		{
+			m_cmds.at(i)->undo();
+		}
 	}
 }
 
@@ -43,6 +49,16 @@ void DataCmdList::append(std::shared_ptr<DataCmd>&& cmd)
 void DataCmdList::reserve(size_t size)
 {
 	m_cmds.reserve(size);
+}
+
+void DataCmd::ignore()
+{
+	m_isIgnored = true;
+}
+
+bool DataCmd::isIgnored() const
+{
+	return m_isIgnored;
 }
 
 }}

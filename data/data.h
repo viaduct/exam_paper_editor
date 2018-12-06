@@ -43,6 +43,7 @@ public:
 	void addDepended(DependencyKey const& key, std::shared_ptr<DataCmd> const& solution);
 	void addDepended(DependencyKey const& key, std::shared_ptr<DataCmd>&& solution);
 	void removeDepended(DependencyKey const& key);
+	void purgeDepended(DependencyKey const& key);
 
 	std::shared_ptr<DataCmd> solution();
 

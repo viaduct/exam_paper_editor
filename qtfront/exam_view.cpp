@@ -44,7 +44,7 @@ ExamView::~ExamView()
 {
 	if ( m_exam )
 	{
-		m_exam->removeDepended(dependencyKeyFromPtr(this));
+		m_exam->purgeDepended(dependencyKeyFromPtr(this));
 	}
 }
 
@@ -181,7 +181,7 @@ void ExamView::setNullExam()
 
 	m_ui->edit_name->setNullExam();
 
-	m_exam->removeDepended(dependencyKeyFromPtr(this));
+	m_exam->purgeDepended(dependencyKeyFromPtr(this));
 	m_exam = nullptr;
 }
 

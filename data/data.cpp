@@ -89,6 +89,12 @@ void Data::removeDepended(const DependencyKey& key)
 	m_customSolutions.erase(key);
 }
 
+void Data::purgeDepended(const DependencyKey& key)
+{
+	m_customSolutions[key]->ignore();
+	m_customSolutions.erase(key);
+}
+
 std::shared_ptr<DataCmd> Data::solution()
 {
 	// Take all children first.

@@ -6,7 +6,8 @@
 #include "../context.h"
 #include "../opened_tree_item_context_var.h"
 #include "../drag_context_var.h"
-#include "../../data/tree_item.h"
+#include "../dir_context_var.h"
+#include "../../data/dir.h"
 
 namespace wally {
 namespace qtfront {
@@ -71,7 +72,15 @@ void View::mouseDoubleClickEvent(QMouseEvent* event)
 	{
 		auto model = treeItemView()->treeItemModel();
 		auto treeItem = model->indexToData(index);
-		context()->openedTreeItemContextVar()->openTreeItem(treeItem);
+
+		if ( treeItem->type() == data::DataType::Dir )
+		{
+			context()->dirContextVar()->activateDir(static_cast<data::Dir*>(treeItem));
+		}
+		else
+		{
+			context()->openedTreeItemContextVar()->openTreeItem(treeItem);
+		}
 
 		event->accept();
 	}

@@ -15,6 +15,13 @@ public:
 
 	virtual void run() = 0;
 	virtual void undo() = 0;
+
+	void ignore();
+	bool isIgnored() const;
+
+private:
+	bool
+	m_isIgnored = false;
 };
 
 class DataCmdList : public DataCmd
